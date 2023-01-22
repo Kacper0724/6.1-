@@ -60,14 +60,12 @@ public class ShapeCollectorTestSuite {
         void testShowFigure() {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
-            Shape shape = new Circle(5);
-            shapeCollector.addFigure(shape);
-            List<Shape> shapes = new ArrayList<>();
-            shapes.add(shape);
+            shapeCollector.addFigure(new Circle(4));
+            shapeCollector.addFigure(new Circle(5));
             //When
-            List<Shape> result = shapeCollector.getFigureList();
+            String result = shapeCollector.showFigures();
             //Then
-            assertEquals(shapes.toString(), result.toString());
+            assertEquals("CircleCircle", result);
         }
     }
 }
