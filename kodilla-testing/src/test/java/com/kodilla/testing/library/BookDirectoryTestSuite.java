@@ -88,7 +88,7 @@ public class BookDirectoryTestSuite {
         //When
         List<Book> BooksList = bookLibrary.listBooksInHandsOf(libraryUser);
         //Then
-        assertEquals(, BooksList.size());
+        assertEquals(0, BooksList.size());
     }
 
     @Test
