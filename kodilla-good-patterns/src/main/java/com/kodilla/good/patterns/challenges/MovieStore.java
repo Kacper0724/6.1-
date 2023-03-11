@@ -4,6 +4,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MovieStore {
+    public static void main(String[] args) {
+        MovieStore movieStore = new MovieStore();
+        System.out.println(movieStore.showMovieTitles());
+    }
+
     public Map<String, List<String>> getMovies() {
         List<String> ironManTranslations = new ArrayList<>();
         ironManTranslations.add("Żelazny Człowiek");
