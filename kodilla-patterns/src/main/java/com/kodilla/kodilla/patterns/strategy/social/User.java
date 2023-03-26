@@ -1,6 +1,7 @@
 package com.kodilla.kodilla.patterns.strategy.social;
 
-public class User {
+public sealed class User
+        permits Millenials, YGeneration, ZGeneration {
     private String name;
     protected SocialPublisher socialPublisher;
 

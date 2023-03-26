@@ -1,5 +1,6 @@
 package com.kodilla.kodilla.patterns.strategy.social;
 
-public interface SocialPublisher {
+public sealed interface SocialPublisher
+        permits FacebookPublisher, SnapchatPublisher, TwitterPublisher {
     String share();
 }
