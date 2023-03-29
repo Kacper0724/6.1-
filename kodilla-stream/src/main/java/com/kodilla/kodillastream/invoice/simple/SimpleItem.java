@@ -1,4 +1,4 @@
-package com.kodilla.stream.invoice.simple;
+package com.kodilla.kodillastream.invoice.simple;
 
 public final class SimpleItem {
     private final SimpleProduct product;

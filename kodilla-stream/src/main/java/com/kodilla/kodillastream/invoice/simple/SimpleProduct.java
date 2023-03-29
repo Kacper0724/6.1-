@@ -1,6 +1,4 @@
-package com.kodilla.stream.invoice.simple;
-
-import java.util.Objects;
+package com.kodilla.kodillastream.invoice.simple;
 
 public final class SimpleProduct {
     private final String productName;
