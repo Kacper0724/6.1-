@@ -1,0 +1,82 @@
+create table ISSUESLISTS (
+    ID serial primary key,
+    NAME varchar(100)
+);
+
+select * from ISSUESLISTS;
+
+create table ISSUES (
+    ID serial primary key,
+    ISSUESLIST_ID bigint unsigned not null,
+    SUMMARY varchar(100),
+    DESCRIPTION varchar(1024),
+    USER_ID_ASSIGNEDTO bigint unsigned not null,
+    foreign key (ISSUESLIST_ID) references ISSUESLISTS(ID),
+    foreign key (USER_ID_ASSIGNEDTO) references USERS(ID)
+);
+
+insert into ISSUESLISTS (NAME)
+values ('ToDo');
+
+insert into ISSUESLISTS (NAME)
+values ('In progress');
+
+insert into ISSUESLISTS (NAME)
+values ('Done');
+
+commit;
+
+select * from ISSUESLISTS;
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (1, 'Cook dinner', 'I must cook a dinner.', 1);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (1, 'Read book', 'I must read a book.', 2);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (1, 'Give the dog to eat', 'I must give dog to eat.', 3);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (1, 'Prepare dinners', 'I must prepare dinners.', 1);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (1, 'Make a laundry', 'I must make a laundry.', 2);
+
+
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (2, 'Make a breakfast', 'I must make a breakfast.', 1);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (2, 'Go to work', 'I must go to work.', 2);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (2, 'To do shop', 'I must buy the things i need.', 3);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (2, 'Walk the dog', 'I must walk the dog.', 1);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (2, 'Clean the apartment', 'I must clean the apartment.', 2);
+
+
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (3, 'Make the bed', 'I must make the bed.', 1);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (3, 'Pay the bill', 'I must pay the bill.', 2);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (3, 'Take a shower', 'I must take a shower.', 3);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (3, 'Replace cat litter', 'I must replace cat litter.', 1);
+
+insert into ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values (3, 'Take the medications', 'I must take the medications.', 2);
+
+commit;
+
+select * from ISSUES;
